@@ -30,3 +30,12 @@ def test_get_all_by_inexistent_city_id():
     assert response.status_code == 200
     assert response.json() == []
 
+
+@pytest.mark.parametrize("city_id", ["abfgdf", "972dgf"])
+def test_get_by_invalid_city_id(city_id):
+    response = client.get(f"{ENDPOINT}/{city_id}")
+    assert response.status_code == 400
+    assert response.json() == {
+        "error": "1 validation error for Request path -> city_id"
+        " value is not a valid integer (type=type_error.integer)"
+    }

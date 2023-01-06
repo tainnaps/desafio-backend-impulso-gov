@@ -19,3 +19,8 @@ def test_get_by_cnes_id_success(cnes_id):
         mocked_json = json.loads(content)
     assert response.json() == mocked_json
 
+
+def test_get_without_cnes_id():
+    response = client.get(f"{ENDPOINT}/")
+    assert response.status_code == 404
+

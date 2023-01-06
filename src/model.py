@@ -17,3 +17,14 @@ class EstablishmentModel:
 
         return establishments
 
+    def get_by_cnes_id(self, cnes_id: int) -> list:
+        query = """--sql
+            SELECT id_cnes, nome, latitude, longitude
+            FROM estabelecimentos
+            WHERE id_cnes=?
+            """
+
+        with self._connect_to_sqlite() as con:
+            establishment = con.cursor().execute(query, (cnes_id,)).fetchone()
+
+        return establishment

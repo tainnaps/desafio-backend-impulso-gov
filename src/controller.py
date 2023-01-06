@@ -1,6 +1,8 @@
 from dataclasses import dataclass
 from typing import TypedDict
 
+from fastapi import HTTPException
+
 from src.model import EstablishmentModel
 
 
@@ -28,3 +30,19 @@ class EstablishmentController:
             for id_cnes, name, latitude, longitude in establishments
         ]
 
+    def get_by_cnes_id(self, cnes_id: int) -> Establishment:
+        establishment = self.__model.get_by_cnes_id(cnes_id=cnes_id)
+
+        if not establishment:
+            raise HTTPException(
+                status_code=404, detail="Establishment not found"
+            )
+
+        id_cnes, name, latitude, longitude = establishment
+
+        return {
+            "cnes": id_cnes,
+            "nome": name,
+            "latitude": latitude,
+            "longitude": longitude,
+        }

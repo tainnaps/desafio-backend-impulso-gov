@@ -24,3 +24,9 @@ def test_get_without_cnes_id():
     response = client.get(f"{ENDPOINT}/")
     assert response.status_code == 404
 
+
+def test_get_by_inexistent_cnes_id():
+    response = client.get(f"{ENDPOINT}/0")
+    assert response.status_code == 404
+    assert response.json() == {"error": "Establishment not found"}
+

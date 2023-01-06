@@ -30,3 +30,12 @@ def test_get_by_inexistent_cnes_id():
     assert response.status_code == 404
     assert response.json() == {"error": "Establishment not found"}
 
+
+@pytest.mark.parametrize("cnes_id", ["abfgdrf", "9729dgf"])
+def test_get_by_invalid_cnes_id(cnes_id):
+    response = client.get(f"{ENDPOINT}/{cnes_id}")
+    assert response.status_code == 400
+    assert response.json() == {
+        "error": "1 validation error for Request path -> cnes_id"
+        " value is not a valid integer (type=type_error.integer)"
+    }

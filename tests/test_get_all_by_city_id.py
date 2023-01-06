@@ -24,3 +24,9 @@ def test_get_all_without_city_id():
     response = client.get(f"{ENDPOINT}/")
     assert response.status_code == 404
 
+
+def test_get_all_by_inexistent_city_id():
+    response = client.get(f"{ENDPOINT}/0")
+    assert response.status_code == 200
+    assert response.json() == []
+

@@ -20,3 +20,7 @@ def test_get_all_by_city_id_success(city_id):
     assert response.json() == mocked_json
 
 
+def test_get_all_without_city_id():
+    response = client.get(f"{ENDPOINT}/")
+    assert response.status_code == 404
+

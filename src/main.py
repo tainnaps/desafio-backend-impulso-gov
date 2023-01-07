@@ -12,7 +12,7 @@ app.include_router(router)
 
 
 @app.get("/")
-def initialize_app():
+def get_app_status():
     return {"message": "Webservice OK"}
 
 

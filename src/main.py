@@ -11,6 +11,11 @@ app = FastAPI()
 app.include_router(router)
 
 
+@app.get("/")
+def initialize_app():
+    return {"message": "Webservice OK"}
+
+
 @app.exception_handler(HTTPException)
 def http_exception_handler(request, exc):
     return JSONResponse({"error": exc.detail}, status_code=exc.status_code)

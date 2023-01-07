@@ -55,7 +55,7 @@ Caso tudo tenha corrido como esperado, você receberá a seguinte resposta ao ac
 }
 ```
 
-Isso significa que a API está pronto para receber mais requisições.
+Isso significa que a API está pronta para receber mais requisições.
 
 ## Documentação da API
 
@@ -65,7 +65,7 @@ Para conhecer os endpoints disponíveis na API e entender como fazer requisiçõ
 
 ## Executando os testes
 
-Foram desenvolvidos testes de integração para os endpoints da API usando `pytest` e o `TestClient` daa`FastAPI`.
+Foram desenvolvidos testes de integração para os endpoints da API usando `pytest` e o `TestClient` da `FastAPI`.
 
 Para executar os testes, siga os seguintes passos:
 

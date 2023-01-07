@@ -36,6 +36,6 @@ def test_get_by_invalid_city_id(city_id):
     response = client.get(f"{ENDPOINT}/{city_id}")
     assert response.status_code == 400
     assert response.json() == {
-        "error": "1 validation error for Request path -> city_id"
+        "message": "1 validation error for Request path -> city_id"
         " value is not a valid integer (type=type_error.integer)"
     }

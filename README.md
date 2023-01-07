@@ -8,8 +8,8 @@ Para solucionar o desafio, foi desenvolvida uma API em `Python` para consultar d
 
 ## Sumário
 
-- [Arquitetura]()
-- [Container]()
+- [Arquitetura](https://github.com/tainnaps/desafio-backend-impulso-gov#arquitetura)
+- [Container](https://github.com/tainnaps/desafio-backend-impulso-gov#container)
 - [Tecnologias](https://github.com/tainnaps/desafio-backend-impulso-gov#tecnologias)
 - [Executando a API](https://github.com/tainnaps/desafio-backend-impulso-gov#executando-a-api)
 - [Documentação](https://github.com/tainnaps/desafio-backend-impulso-gov#documenta%C3%A7%C3%A3o-da-api)
@@ -42,19 +42,19 @@ As tecnologias utilizadas para desenvolver a API foram:
 
 Para executar a API, é necessário ter o [Docker](https://docs.docker.com/get-docker/) e o [Docker Compose](https://docs.docker.com/compose/) instalados na sua máquina. Com este pré-requisito atendido, siga os passos abaixo para executá-la:
 
-1 - Clone este repositório executando o seguinte comando no terminal:
+1 - Clone este repositório
 
 ``` bash
 git clone https://github.com/tainnaps/desafio-backend-impulso-gov.git
 ```
 
-2 - Entre no diretório raiz do repositório clonado com o comando:
+2 - Entre no diretório raiz do repositório clonado
 
 ``` bash
 cd desafio-backend-impulso-gov
 ```
 
-3 - Dentro do diretório raiz (onde se encontra o arquivo `docker-compose.yml`), execute o seguinte comando para iniciar o container da API:
+3 - Dentro do diretório raiz (onde se encontra o arquivo `docker-compose.yml`), inicie o container da API
 
 ``` bash
 docker-compose up
@@ -64,7 +64,7 @@ ou inicie o container em segundo plano
 docker-compose up -d
 ```
 
-4 - Acesse a API inserindo o seguinte endereço em seu navegador web:
+4 - Acesse a API inserindo o endereço abaixo em seu navegador web
 
 ``` bash
 http://127.0.0.1:8000
@@ -92,13 +92,13 @@ Foram desenvolvidos testes de integração para os endpoints da API usando `pyte
 
 Para executar os testes, siga os seguintes passos:
 
-1 - Acesse o terminal do container da API com o comando abaixo:
+1 - Acesse o terminal do container da API
 
 ``` bash
 docker exec -it impulso-gov-backend bash
 ```
 
-2 - No terminal do container da API, execute o seguinte comando:
+2 - No terminal do container da API, execute o comando de teste
 
 ``` bash
 pytest -v

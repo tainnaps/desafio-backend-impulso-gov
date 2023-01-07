@@ -1,19 +1,38 @@
 # Desafio Backend - Impulso Gov
 
-## Executando o webservice
+Este repositório contém a resolução do Desafio Backend do processo seletivo da empresa **Impulso Gov**, na qual foi construída uma API para retornar dados dos estabelecimentos de saúde vinculados ao SUS.
+
+## Sumário
+
+- Tecnologias
+- Executando a API
+- Documentação da API
+- Documentação da API
+- Executando os testes
+
+## Tecnologias
+
+As tecnologias utilizadas para desenvolver a API foram:
+
+- `Docker`: criação de container para desenvolvimento
+- `FastAPI`: construção da API
+- `Sqlite3`: acesso ao banco de dados
+- `Pytest`: criação de testes
+
+## Executando a API
 
 ### Pré-requisitos
 
-⚠️ Para executar o *webservice*, é necessário:
+⚠️ Para executar a API, é necessário:
 
 - Ter o [Docker](https://docs.docker.com/get-docker/) e o [Docker Compose](https://docs.docker.com/compose/) instalados na sua máquina.
-- Clonar o este repositório.
+- Clonar este repositório.
 
 ### Passo a passo
 
-Com os pré-requisitos atendidos, siga os seguintes passos para executar o *webservice*:
+Com os pré-requisitos atendidos, siga os seguintes passos para executar a API:
 
-1 - Dentro raiz do projeto, execute o seguinte comando no terminal para iniciar o container do *webservice*:
+1 - Dentro raiz do projeto, execute o seguinte comando no terminal para iniciar o container da API:
 
 ``` bash
 docker-compose up
@@ -23,7 +42,7 @@ ou inicie o container em segundo plano
 docker-compose up -d
 ```
 
-2 - Para acessar o *webservice*, abra o seguinte endereço em seu navegador web:
+2 - Para acessar a API, abra o seguinte endereço em seu navegador web:
 
 ``` bash
 http://127.0.0.1:8000
@@ -37,28 +56,30 @@ Caso tudo tenha corrido como esperado, você receberá a seguinte resposta ao ac
 }
 ```
 
-Isso significa que o *webservice* está pronto para receber mais requisições.
+Isso significa que a API está pronto para receber mais requisições.
 
-## Documentação do webservice
+## Documentação da API
 
-Para conhecer os endpoints disponíveis no *webservice* e entender como fazer requisições para eles, acesse a [documentação do webservice](http://127.0.0.1:8000/docs).
+Para conhecer os endpoints disponíveis na API e entender como fazer requisições para eles, acesse a [documentação da API](http://127.0.0.1:8000/docs).
 
-⚠️ A documentação só estará disponível enquanto o webservice estiver em execução.
+⚠️ A documentação só estará disponível enquanto a API estiver em execução.
 
 ## Executando os testes
 
-Foram desenvolvidos testes de integração os endpoints do *webservice* usando `pytest` e o `TestClient` da `FastAPI`.
+Foram desenvolvidos testes de integração para os endpoints da API usando `pytest` e o `TestClient` daa`FastAPI`.
 
 Para executar os testes, siga os seguintes passos:
 
-1 - Acesse o terminal do container do *webservice* com o comando abaixo:
+1 - Acesse o terminal do container da API com o comando abaixo:
 
 ``` bash
 docker exec -it impulso-gov-backend bash
 ```
 
-2 - No terminal do container do *webservice*, execute o seguinte comando:
+2 - No terminal do container da API, execute o seguinte comando:
 
 ``` bash
 pytest -v
 ```
+
+Com isso, você verá o resultado de cada caso de teste.

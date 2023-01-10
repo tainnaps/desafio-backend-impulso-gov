@@ -8,20 +8,11 @@ Para solucionar o desafio, foi desenvolvida uma API em `Python` para consultar d
 
 ## Sumário
 
-- [Arquitetura](https://github.com/tainnaps/desafio-backend-impulso-gov#arquitetura)
 - [Container](https://github.com/tainnaps/desafio-backend-impulso-gov#container)
 - [Tecnologias](https://github.com/tainnaps/desafio-backend-impulso-gov#tecnologias)
 - [Executando a API](https://github.com/tainnaps/desafio-backend-impulso-gov#executando-a-api)
-- [Documentação](https://github.com/tainnaps/desafio-backend-impulso-gov#documenta%C3%A7%C3%A3o-da-api)
+- [Documentação](https://github.com/tainnaps/desafio-backend-impulso-gov#documenta%C3%A7%C3%A3o)
 - [Executando os testes](https://github.com/tainnaps/desafio-backend-impulso-gov#executando-os-testes)
-
-## Arquitetura
-
-A API segue o padrão de arquitetura MVC (Model, View, Controller).
-
-Como ela não possui uma interface de usuário, a camada de View não foi implementada.
-
-Dentro da API, a camada de Model gerencia os dados do banco, e a camada de Controller recebe as requisições feitas pela interface de usuário que consumirá a API e envia respostas a partir dos dados retornados pela Model.
 
 ## Container
 
@@ -59,7 +50,7 @@ cd desafio-backend-impulso-gov
 ``` bash
 docker-compose up
 
-ou inicie o container em segundo plano
+# ou inicie o container em segundo plano
 
 docker-compose up -d
 ```
@@ -84,7 +75,7 @@ Isso significa que a API está pronta para receber mais requisições.
 
 Para conhecer os endpoints disponíveis na API e entender como fazer requisições para eles, acesse a [documentação da API](http://127.0.0.1:8000/docs).
 
-⚠️ A documentação só estará disponível enquanto a API estiver em execução.
+⚠️ A documentação é disponibilizada através de um endpoint da API, portanto ela só pode ser acessada enquanto a API estiver em execução.
 
 ## Executando os testes
 
@@ -104,4 +95,4 @@ docker exec -it impulso-gov-backend bash
 pytest -v
 ```
 
-Com isso, o resultado de cada caso de teste será exibido no terminal.
+**OBSERVAÇÃO**: por se tratar de uma API que apenas consulta o banco de dados, sem alterá-lo, não criei um banco de teste, mas sei que, num caso real, o ideal seria criá-lo para o ambiente de testes.

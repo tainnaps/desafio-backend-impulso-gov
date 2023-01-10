@@ -95,4 +95,4 @@ docker exec -it impulso-gov-backend bash
 pytest -v
 ```
 
-**OBSERVAÇÃO**: por se tratar de uma API que apenas consulta o banco de dados, sem alterá-lo, não criei um banco de teste, mas sei que, num caso real, o ideal seria criá-lo para o ambiente de testes.
+**NOTA**: por se tratar de uma API que apenas consulta o banco de dados, sem alterá-lo, não criei um banco para o ambiente de testes, mas sei que, num caso real, o ideal seria criá-lo para não comprometer os dados de produção.
